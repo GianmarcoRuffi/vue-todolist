@@ -29,7 +29,14 @@
           Non hai ancora aggiunto nessun pezzo dell'armatura!
         </li>
         <ul>
-          <li></li>
+          <li
+            :class="{'text-decoration-line-through': piece.check === true}"
+            v-for="(piece, index) in armour"
+            :key="index"
+          >
+            <span @click="piece.check = !piece.check">{{piece.pieceName}}</span>
+            <i @click="removePiece(index)" class="fa-solid fa-xmark"></i>
+          </li>
         </ul>
       </div>
     </div>
