@@ -25,7 +25,9 @@
     <div id="app">
       <div class="container">
         <h1>To do list: forgiare i pezzi per un'armatura</h1>
-
+        <li v-if="armour.length == 0">
+          Non hai ancora aggiunto nessun pezzo dell'armatura!
+        </li>
         <ul>
           <li></li>
         </ul>
