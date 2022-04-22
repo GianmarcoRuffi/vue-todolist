@@ -48,3 +48,7 @@ li {
   color: white;
   font-size: 22px;
 }
+
+li:hover {
+  text-shadow: 2px 2px 8px #000000;
+}
