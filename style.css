@@ -21,7 +21,7 @@ span {
 }
 
 .inner-list {
-  width: 800px;
+  width: 900px;
   height: auto;
   border: 2px solid white;
   border-radius: 10px;
@@ -39,4 +39,9 @@ h1 {
 
 .btn {
   background-color: white;
+}
+
+li {
+  color: white;
+  font-size: 22px;
 }
