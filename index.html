@@ -23,40 +23,55 @@
   </head>
   <body>
     <div id="app">
-      <div class="container">
-        <header><h1>To do list: forgiare i pezzi per un'armatura</h1></header>
-
-        <li v-if="armour.length == 0">
-          Non hai ancora aggiunto nessun pezzo dell'armatura!
-        </li>
-        <ul>
-          <li
-            :class="{'text-decoration-line-through': piece.done === true}"
-            v-for="(piece, index) in armour"
-            :key="index"
-          >
-            <span @click="piece.done = !piece.done">{{piece.pieceName}}</span>
-            <i @click="removePiece(index)" class="fa-solid fa-xmark"></i>
-          </li>
-        </ul>
-        <div class="form-container">
-          <div class="input-group">
-            <input
-              type="text"
-              class="form-control"
-              placeholder="Aggiungi pezzo"
-              aria-label="Pezzo armatura"
-              aria-describedby="button-addon2"
-              v-model="newPiece"
-              @keyup.enter="addPiece"
-            />
-            <button
-              @click="addPiece"
-              class="btn btn-outline-secondary"
-              type="button"
-            >
-              Aggiungi
-            </button>
+      <div
+        class="main-container d-flex justify-content-center align-items-center"
+      >
+        <div class="container inner-list">
+          <div class="row d-flex justify-content-center">
+            <div class="col-12">
+              <header>
+                <h1>To do list: forgiare i pezzi per un'armatura</h1>
+              </header>
+            </div>
+            <div class="col-12">
+              <li v-if="armour.length == 0">
+                Non hai ancora aggiunto nessun pezzo dell'armatura!
+              </li>
+              <ul>
+                <li
+                  :class="{'text-decoration-line-through': piece.done === true}"
+                  v-for="(piece, index) in armour"
+                  :key="index"
+                >
+                  <span @click="piece.done = !piece.done"
+                    >{{piece.pieceName}}</span
+                  >
+                  <i @click="removePiece(index)" class="fa-solid fa-xmark"></i>
+                </li>
+              </ul>
+            </div>
+            <div class="col-12">
+              <div class="form-container">
+                <div class="input-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Aggiungi pezzo"
+                    aria-label="Pezzo armatura"
+                    aria-describedby="button-addon2"
+                    v-model="newPiece"
+                    @keyup.enter="addPiece"
+                  />
+                  <button
+                    @click="addPiece"
+                    class="btn btn-outline-primary"
+                    type="button"
+                  >
+                    Aggiungi
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
