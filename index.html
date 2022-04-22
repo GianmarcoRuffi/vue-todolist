@@ -24,20 +24,42 @@
   <body>
     <div id="app">
       <div class="container">
-        <h1>To do list: forgiare i pezzi per un'armatura</h1>
+        <header><h1>To do list: forgiare i pezzi per un'armatura</h1></header>
+
         <li v-if="armour.length == 0">
           Non hai ancora aggiunto nessun pezzo dell'armatura!
         </li>
         <ul>
           <li
-            :class="{'text-decoration-line-through': piece.check === true}"
+            :class="{'text-decoration-line-through': piece.done === true}"
             v-for="(piece, index) in armour"
             :key="index"
           >
-            <span @click="piece.check = !piece.check">{{piece.pieceName}}</span>
+            <span @click="piece.done = !piece.done">{{piece.pieceName}}</span>
             <i @click="removePiece(index)" class="fa-solid fa-xmark"></i>
           </li>
         </ul>
+        <div class="form-container">
+          <div class="input-group mb-3">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Aggiungi pezzo"
+              aria-label="Pezzo armatura"
+              aria-describedby="button-addon2"
+              v-model="newPiece"
+              @keyup.enter="addPiece"
+            />
+            <button
+              @click="addPiece"
+              class="btn btn-outline-secondary"
+              type="button"
+              id="button-addon2"
+            >
+              Add
+            </button>
+          </div>
+        </div>
       </div>
     </div>
 
