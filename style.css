@@ -23,9 +23,20 @@ span {
 .inner-list {
   width: 800px;
   height: auto;
+  border: 2px solid white;
+  border-radius: 10px;
 }
 
 .input-group {
-  width: 50%;
-  gap: 10px;
+  width: 80%;
+  gap: 3px;
+}
+
+h1 {
+  font-weight: bold;
+  color: white;
+}
+
+.btn {
+  background-color: white;
 }
